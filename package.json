@@ -9,7 +9,7 @@
   ],
   "license": "ISC",
   "author": "0a9a",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.ts",
   "scripts": {
     "start": "node dist/index.js",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.0.1",
+    "@types/nodemailer": "^8.0.1",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
