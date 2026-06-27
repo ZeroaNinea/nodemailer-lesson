@@ -22,8 +22,8 @@ const transporter = nodemailer.createTransport({
       subject: 'Being Silly',
       // text: ':3',
       html: `
-      <div style="text-align: center; font-size: 50px;">:3</div>
-    `,
+        <div style="text-align: center; font-size: 50px;">:3</div>
+      `,
     },
     (err, info) => {
       if (err) {
