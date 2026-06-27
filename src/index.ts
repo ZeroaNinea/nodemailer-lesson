@@ -14,23 +14,18 @@ const transporter = nodemailer.createTransport({
   secure: true,
   port: 465,
 });
-(async () => {
-  await transporter.sendMail(
-    {
-      from: process.env.SENDER_EMAIL || '',
-      to: process.env.RECEIVER_EMAIL || '',
-      subject: 'Being Silly',
-      // text: ':3',
-      html: `
-        <div style="text-align: center; font-size: 50px;">:3</div>
-      `,
-    },
-    (err, info) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(info);
-      }
-    },
-  );
-})();
+try {
+  const info = await transporter.sendMail({
+    from: process.env.SENDER_EMAIL!,
+    to: process.env.RECEIVER_EMAIL!,
+    subject: 'Being Silly',
+    text: ':3',
+    html: `
+      <div style="text-align: center; font-size: 50px;">:3</div>
+    `,
+  });
+
+  console.log(info);
+} catch (err) {
+  console.error(err);
+}
